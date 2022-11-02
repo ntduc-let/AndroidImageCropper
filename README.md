@@ -1,9 +1,5 @@
 Android Image Cropper
 =======
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android--Image--Cropper-green.svg?style=true)](https://android-arsenal.com/details/1/3487)
-[![Build Status](https://travis-ci.org/ArthurHub/Android-Image-Cropper.svg?branch=master)](https://travis-ci.org/ArthurHub/Android-Image-Cropper)
-[ ![Download](https://api.bintray.com/packages/arthurhub/maven/Android-Image-Cropper/images/download.svg) ](https://bintray.com/arthurhub/maven/Android-Image-Cropper/_latestVersion)
-
 
 **Powerful** (Zoom, Rotation, Multi-Source), **customizable** (Shape, Limits, Style), **optimized** (Async, Sampling, Matrix) and **simple** image cropping library for Android.
 
@@ -15,12 +11,24 @@ Android Image Cropper
 [See GitHub Wiki for more info.](https://github.com/ArthurHub/Android-Image-Cropper/wiki)
 
 1. Include the library
+Include this in your root `build.gradle`
 
- ```
- dependencies {
-     api 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
- }
- ```
+```
+allprojects {
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
+	}
+}
+```
+Include this in your app `build.gradle`
+
+```
+dependencies {
+    // Other dependencies
+    implementation 'com.github.ntduc-let:AndroidImageCropper:1.0.0'
+}
+```
 
 Add permissions to manifest
 
@@ -37,7 +45,7 @@ Add this line to your Proguard config file
 
 2. Add `CropImageActivity` into your AndroidManifest.xml
  ```xml
- <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+ <activity android:name="com.ntduc.androidimagecropper.CropImageActivity"
    android:theme="@style/Base.Theme.AppCompat"/> <!-- optional (needed if default theme has no action bar) -->
  ```
 
@@ -76,7 +84,7 @@ Add this line to your Proguard config file
 2. Add `CropImageView` into your activity
  ```xml
  <!-- Image Cropper fill the remaining available height -->
- <com.theartofdev.edmodo.cropper.CropImageView
+ <com.ntduc.androidimagecropper.CropImageView
    xmlns:custom="http://schemas.android.com/apk/res-auto"
    android:id="@+id/cropImageView"
    android:layout_width="match_parent"
